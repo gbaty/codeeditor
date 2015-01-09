@@ -2,7 +2,7 @@
 __revision__ = "$Id: setup.py 16731 2014-06-02 15:42:19Z gbaty $"
 
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 name = 'codeeditor'
 version = '0.1'
@@ -25,12 +25,12 @@ setup(
     keywords='',
 
     # package installation
-    packages=['spydereditor', 'pyqode', 'qutepart', 'enki'],
+    packages=['spydereditor', 'pyqodeeditor', 'quteparteditor', 'enkieditor'],
     package_dir={
-      'spydereditor':'spydereditor',
-      'pyqode':'pyqode', 
-      'qutepart':'qutepart', 
-      'enki':'enki',
+        'spydereditor': 'spydereditor',
+        'pyqode': 'pyqodeeditor',
+        'qutepart': 'quteparteditor',
+        'enki': 'enkieditor',
     },
 
     zip_safe=False,
@@ -40,8 +40,8 @@ setup(
     entry_points={
 
         'oalab.applet': [
-            ],
+            'PyQodeEditor = pyqodeeditor.plugin:PyQodeEditorPlugin',
+        ],
 
-        },
-    )
-
+    },
+)
